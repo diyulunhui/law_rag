@@ -12,10 +12,10 @@ from pydantic import Field
 from langchain_core.retrievers import BaseRetriever
 from langchain_core.documents import Document
 
-from raw_rag.data_loader.file_loader import FileLoader
-from raw_rag.embadder.Legal_text_embedder import LegalTextEmbedder
-from raw_rag.entity.legal_case import LegalCase
-from raw_rag.model.qwen_model import QwenModel
+from data_loader.file_loader import FileLoader
+from embadder.Legal_text_embedder import LegalTextEmbedder
+from entity.legal_case import LegalCase
+from model.qwen_model import QwenModel
 
 
 class LegalRetrievalSystem:
