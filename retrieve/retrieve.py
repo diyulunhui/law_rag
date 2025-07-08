@@ -192,18 +192,10 @@ class LegalRetrievalSystem:
         """问题扩展 - 生成相关查询变体"""
         model = QwenModel()
         result = model.query(
-            "你现在是一个法律专家,请根据用户的输入生成更专业的提问,请你不要生成任何与提问无关的文字,生成的专业提问是用来给大模型做rag召回的", query)
+            "你现在是一个法律专家,请根据用户的输入进行专业表述转换,请你不要生成任何与提问无关的文字", query)
         return result
 
-    def build_hypothetical_questions(self, case: LegalCase) -> List[str]:
-        """构建假设性问题 - 为案例生成可能的问题形式"""
-        questions = [
-            f"关于{case.keywords[0]}的法律案例有哪些？",
-            f"如何判决{case.judge_accusation.split('。')[0]}的案件？",
-            f"{case.category.get('cat_1', '')}纠纷的典型案例",
-            f"{case.parties[0]['Name']}与{case.parties[1]['Name']}之间的法律纠纷"
-        ]
-        return questions
+
 
     def retrieve_cases(self, query: str, k: int = 5) -> List[LegalCase]:
         """多路召回与重排序"""
