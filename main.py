@@ -4,10 +4,10 @@
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
-from raw_rag.data_loader.file_loader import FileLoader
-from raw_rag.embadder.Legal_text_embedder import LegalTextEmbedder
-from raw_rag.model.qwen_model import QwenModel
-from raw_rag.retrieve.retrieve import LegalRetrievalSystem, LegalCaseRetriever
+from data_loader.file_loader import FileLoader
+from embadder.Legal_text_embedder import LegalTextEmbedder
+from model.qwen_model import QwenModel
+from retrieve.retrieve import LegalRetrievalSystem, LegalCaseRetriever
 
 
 def create_legal_qa_chain(retrieval_system: LegalRetrievalSystem, qwen_model: QwenModel):
