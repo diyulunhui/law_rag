@@ -1,7 +1,7 @@
 import json
 import os
 
-from raw_rag.entity.legal_case import LegalCase
+from entity.legal_case import LegalCase
 
 
 class FileLoader:
